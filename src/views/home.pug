@@ -1,13 +1,9 @@
 extends base
 include mixins/video
 
-block content 
-    nav 
-                ul 
-                    li
-                        a(href="/videos/upload") Upload Video
-        
-    each video in videos
-        +video(video)
-    else 
-        li Sorry Noting found
+block content
+    div.video-grid
+        each video in videos
+            +video(video)
+        else
+            span.empty__message No videos found
